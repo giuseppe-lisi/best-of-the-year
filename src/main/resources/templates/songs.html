@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs - BOTY</title>
+</head>
+<body>
+    <main>
+        <h1>Lista delle migliori canzoni</h1>
+        <ul>
+            <li th:each="song : ${songs}" th:text="${song.title}" th:id="${song.id}"></li>
+        </ul>
+    </main>
+</body>
+</html>
