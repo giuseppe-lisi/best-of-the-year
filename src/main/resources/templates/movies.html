@@ -9,7 +9,7 @@
     <main>
         <h1>Lista dei migliori Film</h1>
         <ul>
-            <li th:each="movie : ${movies}" th:text="${movie.title}"></li>
+            <li th:each="movie : ${movies}" th:text="${movie.title}" th:id="${movie.id}"></li>
         </ul>
     </main>
 </body>

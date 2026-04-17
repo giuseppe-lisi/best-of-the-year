@@ -19,12 +19,7 @@ public class AppController {
         model.addAttribute("name", "Giuseppe");
         return "home";
     }
-
-    @GetMapping("/songs")
-    public String songs() {
-        return "songs";
-    }
-
+    
     @GetMapping("/movies")
     public String movies(Model model) {
         // ottiene la lista dei migliori film dalla func getBestMovies
@@ -33,10 +28,19 @@ public class AppController {
         // aggiungo al model che lo passerà alla View
         // l'oggetto verrà poi interpolato tramite dei tag di Thymeleaf
         model.addAttribute("movies", movies);
-
+        
         // restituisco il template di Thymeleaf con i dati dinamici
         // passati dal model
         return "movies";
+    }
+    
+    @GetMapping("/songs")
+    public String songs(Model model) {
+        ArrayList<Songs> songs = getBestSongs();
+
+        model.addAttribute("songs", songs);
+        
+        return "songs";
     }
 
     private ArrayList<Songs> getBestSongs() {
