@@ -5,8 +5,12 @@
                 <h1 class="d-flex p-2">Best Of</h1>
             </div>
             <div class="col-9 d-flex align-items-center justify-content-end gap-3">
-                <button class="btn btn-primary rounded-4 px-5">Movies</button>
-                <button class="btn btn-primary rounded-4 px-5">Songs</button>
+                <a th:href="@{/movies}">
+                    <button class="btn btn-primary rounded-4 px-5">Movies</button>
+                </a>
+                <a th:href="@{/songs}">
+                    <button class="btn btn-primary rounded-4 px-5">Songs</button>
+                </a>
             </div>
         </div>
     </div>
