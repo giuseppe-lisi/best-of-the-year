@@ -48,9 +48,10 @@ public class AppController {
     @GetMapping("/movies/{id}")
     public String movieById(Model model, @PathVariable int id) {
         ArrayList<Movies> movies = getBestMovies();
-        String title = movies.get(id-1).getTitle();
-
-        model.addAttribute("title", title);
+        if (id < movies.size()) {
+            String title = movies.get(id-1).getTitle();
+            model.addAttribute("title", title);
+        }
 
         return "pageById";
     }
@@ -58,9 +59,10 @@ public class AppController {
     @GetMapping("/songs/{id}")
     public String songById(Model model, @PathVariable int id) {
         ArrayList<Songs> songs = getBestSongs();
-        String title = songs.get(id-1).getTitle();
-
-        model.addAttribute("title", title);
+        if (id < songs.size()) {
+            String title = songs.get(id-1).getTitle();
+            model.addAttribute("title", title);
+        }
 
         return "pageById";
     }
