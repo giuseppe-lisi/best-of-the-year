@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head></head>
     <title>Home - BOTY</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
 </head>
 
 <body>
+    <!-- Header -->
+    <div th:replace="~{fragments :: header}"></div>
     <main>
-        <h1>Best of the year by [[${name}]]</h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <h1>Best of by [[${name}]]</h1>
+                </div>
+                <div class="col-12">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores amet dignissimos fugit ex cumque fugiat? Neque beatae optio quia mollitia natus nisi pariatur molestias placeat autem explicabo, dolorum, harum ipsam!
+                    Doloribus asperiores maxime totam, eligendi aut, nisi officia molestias tempora fugit praesentium eveniet dolores maiores debitis assumenda pariatur omnis, vel suscipit libero autem sapiente? Error amet quos dicta odit exercitationem!
+                    Doloribus vel ea mollitia dicta dolore architecto, culpa, dolor quam repudiandae, exercitationem reprehenderit? Nesciunt laborum sunt dolorem repellendus! Voluptas natus ab at error quis atque alias facere saepe ratione ullam!
+                    Assumenda vero vitae rem sunt aperiam unde vel ipsum a non nam doloremque, temporibus nemo! Nobis, eveniet consequatur eos suscipit nihil qui blanditiis magnam eligendi facilis molestiae, minima voluptate. Consequatur!
+                    Quia eum unde beatae quisquam, dolores ipsam totam inventore reprehenderit eligendi odio ad eos quaerat deleniti nostrum fugit? Eius sequi dolore asperiores repellat optio totam magnam architecto soluta labore cupiditate.
+                    Asperiores dolore reiciendis ratione veritatis assumenda. Aperiam iusto aliquam obcaecati! Quisquam, ratione sed aperiam provident optio dicta saepe, omnis voluptatibus voluptas beatae ut reprehenderit facere numquam odio ipsum iure molestiae.</p>
+                </div>
+            </div>
+        </div>
     </main>
+
 </body>
 
 </html>
