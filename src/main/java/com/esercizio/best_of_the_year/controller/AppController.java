@@ -1,10 +1,12 @@
 package com.esercizio.best_of_the_year.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.esercizio.best_of_the_year.classes.Movies;
@@ -43,6 +45,17 @@ public class AppController {
         return "songs";
     }
 
+    @GetMapping("/movies/{id}")
+    public String pageById(Model model, @PathVariable int id) {
+        ArrayList<Movies> movies = getBestMovies();
+        String title = movies.get(id).getTitle();
+
+        model.addAttribute("title", title);
+
+        return "pageById";
+    }
+
+    // i seguenti metodi simulano una chiamata ad un'api 
     private ArrayList<Songs> getBestSongs() {
         Songs song1 = new Songs(1, "Strawberry Fields");
         Songs song2 = new Songs(2, "Purple Rain");
