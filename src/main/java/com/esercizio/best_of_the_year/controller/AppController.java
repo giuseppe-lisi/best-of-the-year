@@ -46,9 +46,19 @@ public class AppController {
     }
 
     @GetMapping("/movies/{id}")
-    public String pageById(Model model, @PathVariable int id) {
+    public String movieById(Model model, @PathVariable int id) {
         ArrayList<Movies> movies = getBestMovies();
-        String title = movies.get(id).getTitle();
+        String title = movies.get(id-1).getTitle();
+
+        model.addAttribute("title", title);
+
+        return "pageById";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String songById(Model model, @PathVariable int id) {
+        ArrayList<Songs> songs = getBestSongs();
+        String title = songs.get(id-1).getTitle();
 
         model.addAttribute("title", title);
 
