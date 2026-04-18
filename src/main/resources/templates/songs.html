@@ -10,10 +10,19 @@
     <!-- Header -->
     <div th:replace="~{fragments :: header}"></div>
     <main>
-        <h1>Lista delle migliori canzoni</h1>
-        <ul>
-            <li th:each="song : ${songs}" th:text="${song.title}" th:id="${song.id}"></li>
-        </ul>
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
+                    <h1>Lista delle migliori canzoni</h1>
+                </div>
+                <div class="col-6 text-center">
+                    <ul class="list-group">
+                        <li th:each="song : ${songs}" th:text="${song.title}" th:id="${song.id}"
+                            class="list-group-item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
