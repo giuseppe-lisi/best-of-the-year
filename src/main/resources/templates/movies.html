@@ -19,8 +19,8 @@
                 </div>
                 <div class="col-6 text-center">
                     <ul class="list-group">
-                        <li th:each="movie : ${movies}" th:text="${movie.title}" th:id="${movie.id}"
-                            class="list-group-item"></li>
+                        <li th:each="movie : ${movies}" th:id="${movie.id}" class="list-group-item"><a
+                                th:href="@{'/movies/' + ${movie.id}}" th:text="${movie.title}"></a></li>
                     </ul>
                 </div>
             </div>

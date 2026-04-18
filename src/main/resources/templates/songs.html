@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songs - BOTY</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" />
 </head>
+
 <body>
     <!-- Header -->
     <div th:replace="~{fragments :: header}"></div>
@@ -17,12 +19,13 @@
                 </div>
                 <div class="col-6 text-center">
                     <ul class="list-group">
-                        <li th:each="song : ${songs}" th:text="${song.title}" th:id="${song.id}"
-                            class="list-group-item"></li>
+                        <li th:each="song : ${songs}" th:id="${song.id}" class="list-group-item"><a
+                                th:href="@{'/songs/' + ${song.id}}" th:text="${song.title}"></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>
